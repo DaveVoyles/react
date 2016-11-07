@@ -349,8 +349,10 @@ class Game extends React.Component {
   ...
 }
 ```
-
-Then remove the constructor and change `Board` so that it takes `squares` via props and has its own `onClick` prop specified by `Game`, like the transformation we made for `Square` and `Board` earlier. You can pass the location of each square into the click handler so that we still know which square was clicked:
+// Is it possible to be more clear here?
+// This implies that we are removing the constructor from GAME, and not board (which is what I believe the author is trying to say).
+// It took me several reads to understand. 
+Then remove the constructor from `Board` and change `Board` so that it takes `squares` via props and has its own `onClick` prop specified by `Game`, like the transformation we made for `Square` and `Board` earlier. You can pass the location of each square into the click handler so that we still know which square was clicked:
 
 ```javascript
 return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
